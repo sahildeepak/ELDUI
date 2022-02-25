@@ -59,6 +59,12 @@ export class PlayVideoComponent implements OnInit {
       console.log(resp);
     });
 
+    if(this.currentLike){
+      this.selectedVideo.totalNoOfLikes=this.selectedVideo.totalNoOfLikes+1;
+    }else{
+      this.selectedVideo.totalNoOfLikes=this.selectedVideo.totalNoOfLikes-1;
+    }
+
     console.log("onLikeChange() end");
   }
 

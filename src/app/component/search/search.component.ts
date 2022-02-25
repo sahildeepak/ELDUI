@@ -25,6 +25,8 @@ export class SearchComponent implements OnInit {
       return;
 
     const formData = this.mySearchForm.value;
+    formData['userId'] = this.dataService.getLoggedInUser();
+
     console.log('mySearchForm::'+ JSON.stringify(formData));
     this.dataService.getListOfVideos(formData).subscribe(
       eldResponse => {

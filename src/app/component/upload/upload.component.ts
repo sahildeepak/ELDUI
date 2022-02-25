@@ -63,10 +63,17 @@ export class UploadComponent implements OnInit {
     if (!this.myForm.valid)
       return;
 
-    const formData = this.myForm.value;
+    const formData = new FormData();
+    formData.append('file', this.myForm?.get('fileSource')?.value);
+    formData.append('type',this.myForm?.get('type')?.value);
+    formData.append('description',this.myForm?.get('description')?.value);
+    formData.append('name',this.myForm?.get('name')?.value);
+    formData.append('category',this.myForm?.get('category')?.value);
+
     this.dataService.upload(formData).subscribe(res => {
+      console.log(res);
       this.uploaded = 'success';
-    }, error => {
+    },error =>{
       this.uploaded = 'error';
     });
 
