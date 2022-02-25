@@ -1,0 +1,21 @@
+.main-container{
+    margin-top: 130px;
+}
+.uploadPicture{
+    height: 30px;
+}
+.textRight{
+    text-align: right;
+    background-color: rgb(243, 243, 243);
+}
+.btn:focus{
+    box-shadow: none !important;
+}
+.search{
+    height: 30px;
+    top: 50px
+}
+.close{
+    background: white;
+    border: none;
+}

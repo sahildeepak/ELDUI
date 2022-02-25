@@ -1,0 +1,55 @@
+{
+    "userid": "sayaly",
+    "password": "sahilamar123",
+    "categoryWiseVideo": [
+        {
+            "category": "Mutual Fund",
+            "videoList": [
+                {
+                    "id": 1,
+                    "name": "Sample Video",
+                    "description": "This is a sample video",
+                    "fileName": "http://localhost:8080/video/sample-video-db.mp4",
+                    "author": "test",
+                    "category": "Mutual Fund",
+                    "uploadedBy": "test",
+                    "creationTime": "3922-03-22",
+                    "like": true,
+                    "totalNoOfLikes": 50,
+                    "rating": 2
+                },
+                {
+                    "id": 1,
+                    "name": "Sample Video",
+                    "description": "This is a sample video",
+                    "fileName": "http://localhost:8080/video/sample-video-db.mp4",
+                    "author": "test",
+                    "category": "Mutual Fund",
+                    "uploadedBy": "test",
+                    "creationTime": "3922-03-22",
+                    "like": false,
+                    "totalNoOfLikes": 50,
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "category": "ETF Fund",
+            "videoList": [
+                {
+                    "id": 2,
+                    "name": "Sample Video",
+                    "description": "This is a sample video",
+                    "fileName": "http://localhost:8080/video/sample-video-db.mp4",
+                    "author": "test",
+                    "category": "ETF Fund",
+                    "uploadedBy": "test",
+                    "creationTime": "3922-03-22",
+                    "like": true,
+                    "totalNoOfLikes": 50,
+                    "rating": 4
+                }
+            ]
+        }
+    ]
+}

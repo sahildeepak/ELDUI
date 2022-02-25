@@ -1,0 +1,68 @@
+<div *ngIf="uploaded=='success'" class="alert alert-success alert-dismissible d-flex align-items-center fade show">
+    <i class="bi-check-circle-fill"></i>
+    <strong class="mx-2">Success!</strong> Your video has been uploaded successfully.
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+<!-- Error Alert -->
+<div *ngIf="uploaded=='error'" class="alert alert-danger alert-dismissible d-flex align-items-center fade show">
+    <i class="bi-exclamation-octagon-fill"></i>
+    <strong class="mx-2">Error!</strong> A problem has been occurred while submitting your video.
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+
+<div class="container-fluid">
+    <form [formGroup]="myForm">
+
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input formControlName="name" id="name" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="name">Description</label>
+                    <input formControlName="description" id="description" type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="name">File Type</label>
+                    <select formControlName="type" id="type" class="form-control">
+                        <option value="mp4">.MP4</option>
+                        <option value="mov">.MOV</option>
+                        <option value="mkv">.MKV</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="file">File</label>
+                    <input formControlName="file" id="file" type="file" class="form-control"
+                        (change)="onFileChange($event)">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="name">File Category</label>
+                    <select formControlName="category" id="category" class="form-control">
+                        <option value="capMkt">Capital Markets</option>
+                        <option value="adv">Advisory</option>
+                        <option value="trdInvPrdts">Traditional Investment Products</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-6">
+            </div>
+        </div>
+        <div class="row moveRight">
+            <button class="btn btn-primary" (click)="upload()">Upload</button>
+            <button class="btn btn-primary" (click)="clear()">Clear</button>
+        </div>
+    </form>
+</div>

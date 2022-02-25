@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <form [formGroup]="mySearchForm">
+    <div class="row">
+        <hr/>
+        <div class="col-md-3">
+            <div class="input-group mb-3">
+                <select formControlName="category" id="category" class="form-control fitcontent" (change)="onEnter($event)">
+                    <option value="all">All Categories</option>
+                    <option value="capMkt">Capital Markets</option>
+                    <option value="adv">Advisory</option>
+                    <option value="trdInvPrdts">Traditional Investment Products</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="col-md-9">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                    aria-describedby="basic-addon1" (keyup.enter)="onEnter($event)" id="searchText" formControlName="searchText">
+            </div>
+        </div>
+        <hr />
+    </div>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+<div class="fixed-top">
+  <app-header></app-header>
+</div>
+
+<app-login *ngIf="!user"></app-login>
+
+<div class="fixed-top search">
+  <app-search *ngIf="uploadForm && user"></app-search>
+  <app-videos></app-videos>
+</div>
+<div class="fixed-bottom textRight border" *ngIf="user">
+  <img class="uploadPicture" src="/assets/upload.png" alt="Upload">
+  <button class="btn" (click)="open(mymodal)">Upload Video</button>
+</div>
+
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Upload Video</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">X</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-upload></app-upload>
+  </div>
+  <div class="modal-footer">
+  </div>
+</ng-template>

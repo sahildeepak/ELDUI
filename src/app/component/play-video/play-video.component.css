@@ -1,0 +1,12 @@
+ngb-rating {
+    color:#002B51;
+    text-align: right;
+    font-size: 18px;
+  }
+  .noFill{
+    color: grey !important;
+    border: #002B51;
+}
+.heartSize{
+    font-size: 18px;
+}

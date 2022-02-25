@@ -1,0 +1,18 @@
+<nav class="mynavbar">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <a class="mynavbar-text" href="">
+                    Morgan Stanley - Explore, Learn and Develop
+                </a>
+            </div>
+            <div class="col textRight" *ngIf="user">
+                <img class="profilePicture" src="/assets/user.png" alt="User">
+                <button type="button" class="btn btn-default" placement="start" ngbTooltip="{{user}}">
+                    User Profile
+                  </button>
+                <button class="btn btn-default" (click)="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,36 @@
+{{msg}}
+<div class="main-container container-fluid videos" *ngIf="eldResponse">
+  <div *ngFor="let c of eldResponse.categoryWiseVideo">
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+      <ngb-panel title={{c.category}}>
+        <ng-template ngbPanelContent>
+          <div class="card" *ngFor="let video of c.videoList">
+            <div class="row">
+              <div class="col-6">{{video.name}}</div>
+              <div class="col-6 textRight">{{video.creationTime}}</div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-2">
+                <img [class.selected]="video === selectedVideo" (click)="onSelect(video,mymodal)" class="videoPicture"
+                  src="/assets/play-button.png" alt="User" />
+              </div>
+              <div class="col-10">{{video.description}}</div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion> 
+  </div>
+</div>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title1">{{selectedVideo.name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">X</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-play-video [selectedVideo]="selectedVideo"></app-play-video>
+  </div>
+</ng-template>

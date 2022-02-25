@@ -1,0 +1,109 @@
+{
+    "userid": "siddhesh",
+    "password": "Testing@12345",
+    "categoryWiseVideo": [
+        {
+            "category": "Mutual Fund",
+            "videoList": [
+                {
+                    "id": 1,
+                    "name": "Sample Video",
+                    "description": "This is a sample video",
+                    "fileName": "http://localhost:8080/video/sample-video-db.mp4",
+                    "author": "test",
+                    "category": "Mutual Fund",
+                    "uploadedBy": "test",
+                    "creationTime": "3922-03-22",
+                    "like": true,
+                    "totalNoOfLikes": 50,
+                    "rating": 4
+                },
+                {
+                    "id": 2,
+                    "name": "Sushant",
+                    "description": "This is a sample video to show",
+                    "fileName": "http://localhost:8080/video/sample-Sushant.mp4",
+                    "author": "test",
+                    "category": "trial",
+                    "uploadedBy": "test",
+                    "creationTime": "2022-03-22",
+                    "like": true,
+                    "totalNoOfLikes": 50,
+                    "rating": 4
+                },
+                {
+                    "id": 3,
+                    "name": "Sourabh",
+                    "description": "Sourabh Desc",
+                    "fileName": "http://localhost:8080/video/Sourabh_video.mp4",
+                    "author": "Mutual Fund",
+                    "uploadedBy": "test",
+                    "creationTime": "2022-03-22",
+                    "like": true,
+                    "totalNoOfLikes": 50,
+                    "rating": 4
+                },
+                {
+                    "id": 3,
+                    "name": "Sourabh",
+                    "description": "Sourabh Desc",
+                    "fileName": "http://localhost:8080/video/Sourabh_video.mp4",
+                    "author": "Mutual Fund",
+                    "uploadedBy": "test",
+                    "creationTime": "2022-03-22",
+                    "like": true,
+                    "totalNoOfLikes": 50,
+                    "rating": 4
+                },
+                {
+                    "id": 3,
+                    "name": "Sourabh",
+                    "description": "Sourabh Desc",
+                    "fileName": "http://localhost:8080/video/Sourabh_video.mp4",
+                    "author": "Mutual Fund",
+                    "uploadedBy": "test",
+                    "creationTime": "2022-03-22",
+                    "like": true,
+                    "totalNoOfLikes": 50,
+                    "rating": 4
+                },
+                {
+                    "id": 3,
+                    "name": "Sourabh",
+                    "description": "Sourabh Desc",
+                    "fileName": "http://localhost:8080/video/Sourabh_video.mp4",
+                    "author": "Mutual Fund",
+                    "uploadedBy": "test",
+                    "creationTime": "2022-03-22",
+                    "like": true,
+                    "totalNoOfLikes": 50,
+                    "rating": 4
+                },
+                {
+                    "id": 3,
+                    "name": "Sourabh",
+                    "description": "Sourabh Desc",
+                    "fileName": "http://localhost:8080/video/Sourabh_video.mp4",
+                    "author": "ETF",
+                    "uploadedBy": "test",
+                    "creationTime": "2022-03-22",
+                    "like": true,
+                    "totalNoOfLikes": 50,
+                    "rating": 4
+                },
+                {
+                    "id": 3,
+                    "name": "Sourabh",
+                    "description": "Sourabh Desc",
+                    "fileName": "http://localhost:8080/video/Sourabh_video.mp4",
+                    "author": "Mutual Fund",
+                    "uploadedBy": "test",
+                    "creationTime": "2022-03-22",
+                    "like": true,
+                    "totalNoOfLikes": 50,
+                    "rating": 4
+                }
+            ]
+        }
+    ]
+}

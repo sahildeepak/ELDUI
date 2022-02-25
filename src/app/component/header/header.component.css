@@ -1,0 +1,27 @@
+.mynavbar{
+    background: #002B51 !important;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+.mynavbar-text{
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+    color: white !important;
+}
+.btn{
+    color: white !important;
+}
+.profilePicture{
+    height: 30px;
+}
+.btn:focus{
+    box-shadow: none !important;
+}
