@@ -5,7 +5,7 @@
               <div class="col-md-2">
                      <div class="row">
                             <div class="col-md-6">
-                                   <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false"
+                                   <ngb-rating [max]="5" [formControl]="currentRate" [readonly]="false"
                                           (click)="onRatingClick()">
                                    </ngb-rating>{{currentRate}}
                             </div>
