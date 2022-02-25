@@ -33,9 +33,9 @@ export class PlayVideoComponent implements OnInit {
 
     console.log("Request: "+JSON.stringify(postReq));
 
-    this.dataService.rateVideo(postReq).subscribe(resp => {
+    /*this.dataService.rateVideo(postReq).subscribe(resp => {
       console.log(resp);
-    });
+    });*/
 
     console.log("onRatingChange() end");
   }

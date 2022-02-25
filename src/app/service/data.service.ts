@@ -8,11 +8,11 @@ import { CategoryWiseVideoEntity, ELDResponse, User, VideoLikeRequest, VideoRate
 })
 export class DataService {
 
-  private _uploadUrl: string = "";
-  private _loginAndSearchUrl: string = "assets/loginResponse.json";
-  private _searchUrl: string = "assets/listOfVideos.json";
-  private _rateUrl: string = "";
-  private _likeUrl: string = "";
+  private _uploadUrl: string = "http://localhost:8080/video/upload";
+  private _loginAndSearchUrl: string = "http://localhost:8080/video/login";
+  private _searchUrl: string = "http://localhost:8080/video/category";
+  private _rateUrl: string = "http://localhost:8080/video/rate";
+  private _likeUrl: string = "http://localhost:8080/video/like";
   user: BehaviorSubject<any> = new BehaviorSubject<any>(localStorage.getItem('user'));
   eldResponse: Subject<ELDResponse> = new Subject<ELDResponse>();
 
