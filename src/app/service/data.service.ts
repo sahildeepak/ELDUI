@@ -27,7 +27,7 @@ export class DataService {
     this.eldResponse.next(test);
   }
   getListOfVideos(formData: any): Observable<ELDResponse> {
-    return this.http.get<ELDResponse>(this._searchUrl);
+    return this.http.post<ELDResponse>(this._searchUrl,formData);
   }
 
   upload(formData: any): Observable<any> {

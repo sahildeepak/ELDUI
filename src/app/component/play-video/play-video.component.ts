@@ -1,3 +1,4 @@
+import { temporaryAllocator } from '@angular/compiler/src/render3/view/util';
 import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from 'src/app/service/data.service';
 import { Video, VideoLikeRequest, VideoRateRequest } from '../../../model/user';
@@ -24,19 +25,32 @@ export class PlayVideoComponent implements OnInit {
   onRatingClick() {
     console.log("onRatingChange() start");
 
-    let postReq: VideoRateRequest = {
+    /*let postReq: VideoRateRequest = {
       videoId: this.selectedVideo.id,
       userId: this.dataService.getLoggedInUser(),
       rating: this.currentRate
     };
 
-    console.log("Request: "+JSON.stringify(postReq));
+    ;
 
-    /*this.dataService.rateVideo(postReq).subscribe(resp => {
-      console.log(resp);
-    });*/
+    /**/
 
     console.log("onRatingChange() end");
+    setTimeout(() => {this.temporary()}, 50);
+  }
+
+  temporary(){
+    console.log("currentRate: "+this.currentRate);
+    let postReq: VideoRateRequest = {
+      videoId: this.selectedVideo.id,
+      userId: this.dataService.getLoggedInUser(),
+      rating: this.currentRate
+    };
+    console.log("Request: "+JSON.stringify(postReq))
+
+    this.dataService.rateVideo(postReq).subscribe(resp => {
+      console.log(resp);
+    });
   }
 
   onLikeClick() {
