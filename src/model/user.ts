@@ -3,7 +3,7 @@ export interface User {
   password: string;
 }
 export interface ELDResponse {
-  userid: string;
+  userId: string;
   password: string;
   categoryWiseVideo: (CategoryWiseVideoEntity)[];
 }
