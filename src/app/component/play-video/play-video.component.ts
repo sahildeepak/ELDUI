@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { DataService } from 'src/app/service/data.service';
 import { Video, VideoLikeRequest, VideoRateRequest } from '../../../model/user';
 
@@ -11,13 +12,13 @@ export class PlayVideoComponent implements OnInit {
 
   @Input("selectedVideo") selectedVideo!: Video;
 
-  currentRate!: number;
+  currentRate = new FormControl(0, Validators.required);
   currentLike!: boolean;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.currentRate = this.selectedVideo.rating;
+    this.currentRate.setValue(this.selectedVideo.rating);
     this.currentLike = this.selectedVideo.like;
   }
 
@@ -27,7 +28,7 @@ export class PlayVideoComponent implements OnInit {
     let postReq: VideoRateRequest = {
       videoId: this.selectedVideo.id,
       userId: this.dataService.getLoggedInUser(),
-      rating: this.currentRate
+      rating: this.currentRate.value
     };
 
     console.log("Request: "+JSON.stringify(postReq));
