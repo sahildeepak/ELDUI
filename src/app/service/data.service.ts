@@ -10,7 +10,7 @@ export class DataService {
 
   private _uploadUrl: string = "https://eldportalservice.azurewebsites.net/video/upload";
   private _loginUrl: string = "https://eldportalservice.azurewebsites.net/video/login";
-  private _searchUrl: string = "https://eldportalservice.azurewebsites.net/video/category";
+  private _searchUrl: string = "https://eldportalservice.azurewebsites.net/search/data";
   private _rateUrl: string = "https://eldportalservice.azurewebsites.net/video/rate";
   private _likeUrl: string = "https://eldportalservice.azurewebsites.net/video/like";
   private _videoDataUrl: string = "https://eldportalservice.azurewebsites.net/video";
