@@ -5,8 +5,19 @@
 <app-login *ngIf="!user"></app-login>
 
 <div class="fixed-top search">
-  <app-search *ngIf="uploadForm && user"></app-search>
-  <app-videos></app-videos>
+  <div class="container-fluid" *ngIf="uploadForm && user">
+    <div class="row">
+      <div class="col-12"><app-search></app-search></div>
+    </div>
+    <div class="row">
+      <div class="col-12" class="welcome-msg">Hi {{user}}, Welcome to the world of Learning and Exploration.</div>
+      <br/>
+    </div>
+    <div class="row">
+      <div class="col-12"><app-videos></app-videos></div>
+    </div>
+    
+  </div>
 </div>
 <div class="fixed-bottom textRight border" *ngIf="user">
   <img class="uploadPicture" src="/assets/upload.png" alt="Upload">

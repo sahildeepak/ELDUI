@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEvent } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { CategoryWiseVideoEntity, ELDResponse, User, VideoLikeRequest, VideoRateRequest } from '../../model/user';
@@ -8,11 +8,11 @@ import { CategoryWiseVideoEntity, ELDResponse, User, VideoLikeRequest, VideoRate
 })
 export class DataService {
 
-  private _uploadUrl: string = "http://localhost:8080/video/upload";
-  private _loginAndSearchUrl: string = "http://localhost:8080/video/login";
-  private _searchUrl: string = "http://localhost:8080/video/category";
-  private _rateUrl: string = "http://localhost:8080/video/rate";
-  private _likeUrl: string = "http://localhost:8080/video/like";
+  private _uploadUrl: string = "http://eldportalservice.azurewebsites.net/video/upload";
+  private _loginUrl: string = "http://eldportalservice.azurewebsites.net/video/login";
+  private _searchUrl: string = "http://eldportalservice.azurewebsites.net/search/data";
+  private _rateUrl: string = "http://eldportalservice.azurewebsites.net/video/rate";
+  private _likeUrl: string = "http://eldportalservice.azurewebsites.net/video/like";
   user: BehaviorSubject<any> = new BehaviorSubject<any>(localStorage.getItem('user'));
   eldResponse: Subject<ELDResponse> = new Subject<ELDResponse>();
 
@@ -27,7 +27,7 @@ export class DataService {
     this.eldResponse.next(test);
   }
   getListOfVideos(formData: any): Observable<ELDResponse> {
-    return this.http.post<ELDResponse>(this._searchUrl,formData);
+    return this.http.post<ELDResponse>(this._searchUrl, formData);
   }
 
   upload(formData: any): Observable<any> {
@@ -35,7 +35,7 @@ export class DataService {
   }
 
   login(formData: User): Observable<ELDResponse> {
-    return this.http.post<ELDResponse>(this._loginAndSearchUrl, formData);
+    return this.http.post<ELDResponse>(this._loginUrl, formData);
   }
   saveLogin(userName: string) {
     localStorage.setItem('user', userName);

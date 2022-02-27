@@ -24,6 +24,8 @@ export interface Video {
   totalNoOfLikes: number;
   rating: number;
   currentUser: number;
+  vtt: string;
+  thumbneil: string;
 }
 
 export class VideoLikeRequest {

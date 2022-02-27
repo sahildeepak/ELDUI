@@ -19,3 +19,16 @@
     background: white;
     border: none;
 }
+.welcome-msg {
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-left: 1.5rem;
+    margin-right: .3125rem;
+    margin-top: .3125rem;
+    margin-bottom: .3125rem;
+
+    font-size: 1.09rem;
+    text-decoration: none;
+    white-space: nowrap;
+    text-align: left;
+}

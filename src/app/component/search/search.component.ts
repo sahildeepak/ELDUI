@@ -11,8 +11,8 @@ export class SearchComponent implements OnInit {
 
   public msg!: string;
   public mySearchForm = new FormGroup({
-    category: new FormControl('all', []),
-    searchText: new FormControl(null, [])
+    category: new FormControl('All', []),
+    searchValue: new FormControl(null, [])
   });
   constructor(private dataService: DataService) {
    }

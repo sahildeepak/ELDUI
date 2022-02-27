@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.submitted = true;
+    this.msg='';
 
     if (this.form.invalid) {
       return;
@@ -48,5 +49,6 @@ export class LoginComponent implements OnInit {
   clear() {
     this.form.setErrors({});
     this.form.reset();
+    this.msg='';
   }
 }
