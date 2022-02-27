@@ -1,18 +1,20 @@
 import { HttpClient, HttpEvent } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { CategoryWiseVideoEntity, ELDResponse, User, VideoLikeRequest, VideoRateRequest } from '../../model/user';
+import { CategoryWiseVideoEntity, ELDResponse, User, Video, VideoLikeRequest, VideoRateRequest } from '../../model/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  private _uploadUrl: string = "http://eldportalservice.azurewebsites.net/video/upload";
-  private _loginUrl: string = "http://eldportalservice.azurewebsites.net/video/login";
-  private _searchUrl: string = "http://eldportalservice.azurewebsites.net/search/data";
-  private _rateUrl: string = "http://eldportalservice.azurewebsites.net/video/rate";
-  private _likeUrl: string = "http://eldportalservice.azurewebsites.net/video/like";
+  private _uploadUrl: string = "https://eldportalservice.azurewebsites.net/video/upload";
+  private _loginUrl: string = "https://eldportalservice.azurewebsites.net/video/login";
+  private _searchUrl: string = "https://eldportalservice.azurewebsites.net/video/category";
+  private _rateUrl: string = "https://eldportalservice.azurewebsites.net/video/rate";
+  private _likeUrl: string = "https://eldportalservice.azurewebsites.net/video/like";
+  private _videoDataUrl: string = "https://eldportalservice.azurewebsites.net/video";
+
   user: BehaviorSubject<any> = new BehaviorSubject<any>(localStorage.getItem('user'));
   eldResponse: Subject<ELDResponse> = new Subject<ELDResponse>();
 
@@ -28,6 +30,10 @@ export class DataService {
   }
   getListOfVideos(formData: any): Observable<ELDResponse> {
     return this.http.post<ELDResponse>(this._searchUrl, formData);
+  }
+
+  getVideo(formData: any): Observable<Video> {
+    return this.http.post<Video>(this._videoDataUrl, formData);
   }
 
   upload(formData: any): Observable<any> {

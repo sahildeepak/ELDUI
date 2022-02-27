@@ -34,11 +34,27 @@ export class VideosComponent implements OnInit {
 
   onSelect(video: Video,tets: any){
     this.selectedVideo = video;
-    this.modalService.open(tets,this.ngbModalOptions).result.then((result) => {
-      console.log(result);
-    }, (reason) => {
-      console.log(reason);
+
+    let postReq = {
+      videoId: this.selectedVideo.id,
+      userId: this.dataService.getLoggedInUser()
+    };
+
+    console.log("onSelect() Request: "+JSON.stringify(postReq))
+
+    this.dataService.getVideo(postReq).subscribe( respVideo => {
+      console.log("onSelect() respVideo: "+JSON.stringify(respVideo))
+      if(respVideo) {
+        this.selectedVideo = respVideo;
+        this.modalService.open(tets,this.ngbModalOptions).result.then((result) => {
+          console.log(result);
+        }, (reason) => {
+          console.log(reason);
+        });
+      }
     });
+
+
   }
   ngOnDestroy() {
     // unsubscribe to ensure no memory leaks

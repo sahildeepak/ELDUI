@@ -1,0 +1,16 @@
+{
+    "id": 15,
+    "currentUser": "amarsah",
+    "name": "The Depth of Real Advice  Morgan Stanley ad",
+    "description": "The value of advice",
+    "fileName": "http://localhost:8080/video/The Depth of Real Advice  Morgan Stanley ad.mp4",
+    "author": "Rohit Roy",
+    "category": "Advisory",
+    "uploadedBy": "admin",
+    "creationTime": "2022-02-27",
+    "totalNoOfLikes": 0,
+    "rating": 0,
+    "like": false,
+    "vtt": "https://eldlmsstorageacct.blob.core.windows.net/eldvtt/The_Depth_ad.vtt",
+    "thumbneil": "https://eldlmsstorageacct.blob.core.windows.net/eldthumbneil/The_Depth_ad.PNG"
+}
