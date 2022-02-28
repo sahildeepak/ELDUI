@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbCollapse, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './component/login/login.component';
+import { CreateLearningPathComponent } from './create-learning-path/create-learning-path.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginComponent } from './component/login/login.component';
     UploadComponent,
     VideosComponent,
     PlayVideoComponent,
-    LoginComponent
+    LoginComponent,
+    CreateLearningPathComponent
   ],
   imports: [
     BrowserModule,

@@ -34,18 +34,18 @@ export class AppComponent {
       this.user = userName;
     });
     const tempUser = this.dataService.getLoggedInUserProfile();
-    console.log(JSON.stringify(tempUser));
+    
     const tempUser2 = 
     {  
       username: tempUser.name,
       name: tempUser.name,
       password: tempUser.password
     };
-    console.log(JSON.stringify(tempUser2));
+    
     if(tempUser2.username != '') {
       this.dataService.login(tempUser2).subscribe(
         eldResponse => {
-          console.log(JSON.stringify(eldResponse));
+          
           if (!eldResponse) {
             this.dataService.removeLogin();
           } else {

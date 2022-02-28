@@ -45,3 +45,8 @@ export class VideoRateRequest {
   userId!: string | null;
   rating!: number;
 }
+
+export interface Alert {
+  type: string;
+  message: string;
+}

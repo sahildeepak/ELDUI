@@ -1,0 +1,22 @@
+.uploadPicture{
+    height: 30px;
+}
+
+.btn{
+    color: white !important;
+    width: fit-content;
+    margin-left: 1px;
+    margin-right: 1px;
+    background-color: #002B51 !important;
+}
+
+.moveRight{
+    margin-top: 10px;
+    margin-right: 10px;
+    float: right;
+}
+
+.moveRightNoTopMargin{
+    margin-right: 10px;
+    float: right;
+}

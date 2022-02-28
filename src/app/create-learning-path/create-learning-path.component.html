@@ -1,0 +1,87 @@
+<div class="container-fluid">
+    <ngb-alert *ngIf="alert.message" [type]="alert.type" (closed)="closeAlert()">
+        {{alert.message}}
+    </ngb-alert>
+    <form [formGroup]="createLearningPathForm">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="programName">Program Name</label>
+                    <input formControlName="programName" id="programName" type="text" class="form-control"
+                        [ngClass]="{ 'is-invalid': saved && f['programName'].errors }" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select formControlName="department" id="department" class="form-control"
+                        [ngClass]="{ 'is-invalid': saved && f['department'].errors }">
+                        <option value="Capital Market">Capital Market</option>
+                        <option value="Advisory">Advisory</option>
+                        <option value="Traditional Investment Products">Traditional Investment Products</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="file">Add New Content</label>
+                    <input formControlName="file" id="file" type="file" class="form-control"
+                        (change)="onFileChange($event)" [ngClass]="{ 'is-invalid': f['file'].errors }" />
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="searchContent">Search Content</label>
+                    <input id="searchContent" type="text" class="form-control" formControlName="selectedVideoName"
+                        [ngbTypeahead]="search" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <button class="btn btn-primary moveRight" (click)="addNewContent()" id="addNewContentBtn">Add</button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-primary moveRight" (click)="addSearchedContent()"
+                    id="addSearchedContentBtn">Add</button>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-12">
+                <ul class="list-group">
+                    <li *ngFor="let item of items; let i = index"><input disabled="true" type="text"
+                            class="form-control" value="{{item}}"></li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-primary moveRightNoTopMargin" (click)="clearContent()" id="clear">Clear</button>
+                <button class="btn btn-primary moveRightNoTopMargin" (click)="saveContent()" id="save">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<ng-template #mymodal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Upload Video</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">X</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-upload></app-upload>
+    </div>
+    <div class="modal-footer">
+    </div>
+</ng-template>
+

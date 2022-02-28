@@ -20,6 +20,8 @@
   </div>
 </div>
 <div class="fixed-bottom textRight border" *ngIf="user">
+  <img class="uploadPicture" src="/assets/create-learning-path.jpg" alt="Create Learning Path">
+  <button class="btn" (click)="open(createLearningPathModal)">Create Learning Path</button>
   <img class="uploadPicture" src="/assets/upload.png" alt="Upload">
   <button class="btn" (click)="open(mymodal)">Upload Video</button>
 </div>
@@ -34,6 +36,20 @@
   </div>
   <div class="modal-body">
     <app-upload></app-upload>
+  </div>
+  <div class="modal-footer">
+  </div>
+</ng-template>
+
+<ng-template #createLearningPathModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Create Learning Path</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">X</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-create-learning-path></app-create-learning-path>
   </div>
   <div class="modal-footer">
   </div>
