@@ -40,8 +40,9 @@ export class LoginComponent implements OnInit {
         if (!eldResponse)
           this.msg = "No User Found";
         else {
-          this.dataService.seteldResponse(eldResponse);
           this.dataService.saveLogin(eldResponse.userId);
+          setTimeout(()=>this.dataService.seteldResponse(eldResponse), 100);
+          
         }
       }
     );

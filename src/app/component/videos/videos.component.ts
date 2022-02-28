@@ -23,13 +23,13 @@ export class VideosComponent implements OnInit {
   subscription!: Subscription;
 
   constructor(private dataService: DataService, private modalService: NgbModal) {
-    
-   }
-
-  ngOnInit(): void {
     this.subscription = this.dataService.eldResponse.subscribe(res =>{
       this.eldResponse = res;
      });
+   }
+
+  ngOnInit(): void {
+
   }
 
   onSelect(video: Video,tets: any){
