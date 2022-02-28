@@ -2,6 +2,7 @@ import { Component, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
+import { User, UserProfile } from 'src/model/user';
 import { SearchComponent } from './component/search/search.component';
 import { DataService } from './service/data.service';
 
@@ -32,6 +33,37 @@ export class AppComponent {
     this.subscription = this.dataService.user.subscribe((userName) => {
       this.user = userName;
     });
+    const tempUser = this.dataService.getLoggedInUserProfile();
+    console.log(JSON.stringify(tempUser));
+    const tempUser2 = 
+    {  
+      username: tempUser.name,
+      name: tempUser.name,
+      password: tempUser.password
+    };
+    console.log(JSON.stringify(tempUser2));
+    if(tempUser2.username != '') {
+      this.dataService.login(tempUser2).subscribe(
+        eldResponse => {
+          console.log(JSON.stringify(eldResponse));
+          if (!eldResponse) {
+            this.dataService.removeLogin();
+          } else {
+            const user: UserProfile = 
+            {  
+              name: eldResponse.userId,
+              password: eldResponse.password,
+              dept: eldResponse.dept
+            };
+  
+            this.dataService.saveLogin(user);
+            setTimeout(()=>this.dataService.seteldResponse(eldResponse), 100);
+            
+          }
+        }
+      );
+    }
+    
   }
 
   click() {

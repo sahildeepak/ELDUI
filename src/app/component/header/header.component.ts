@@ -11,11 +11,13 @@ export class HeaderComponent implements OnInit {
 
   public user: any;
   subscription!: Subscription;
+  _localStorage: Storage;
 
   constructor(private dataService: DataService) {
     this.subscription = this.dataService.user.subscribe(res =>{
       this.user = res;
      });
+     this._localStorage = this.dataService.localStorage;
    }
 
   ngOnInit(): void {

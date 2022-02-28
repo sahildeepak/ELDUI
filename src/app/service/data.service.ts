@@ -1,7 +1,7 @@
 import { HttpClient, HttpEvent } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { CategoryWiseVideoEntity, ELDResponse, User, Video, VideoLikeRequest, VideoRateRequest } from '../../model/user';
+import { CategoryWiseVideoEntity, ELDResponse, User, UserProfile, Video, VideoLikeRequest, VideoRateRequest } from '../../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -43,9 +43,11 @@ export class DataService {
   login(formData: User): Observable<ELDResponse> {
     return this.http.post<ELDResponse>(this._loginUrl, formData);
   }
-  saveLogin(userName: string) {
-    localStorage.setItem('user', userName);
-    this.user.next(userName);
+  saveLogin(user: UserProfile) {
+    localStorage.setItem('user', user.name);
+    localStorage.setItem('password', user.password);
+    localStorage.setItem('dept', user.dept);
+    this.user.next(user.name);
   }
 
   getLoggedInUser() {
@@ -57,9 +59,34 @@ export class DataService {
     return user;
   }
 
+  getLoggedInUserProfile(): UserProfile {
+    const tempUser = localStorage.getItem('user');
+    const tempPwd = localStorage.getItem('password');
+    const tempDept = localStorage.getItem('dept');
+
+    let user: UserProfile = {  
+      name: '',
+      password: '',
+      dept: ''
+    };
+
+    if(tempUser && tempPwd && tempDept) {
+      user = 
+      {  
+        name: tempUser,
+        password: tempPwd,
+        dept: tempDept
+      };
+      
+    }
+    return user;
+  }
+
   removeLogin() {
     this.clearEldResponse();
     localStorage.removeItem('user');
+    localStorage.removeItem('password');
+    localStorage.removeItem('dept');
     this.user.next('');
   }
 
@@ -69,5 +96,10 @@ export class DataService {
 
   rateVideo(req: VideoRateRequest ) {
     return this.http.post(this._rateUrl, req);
+  }
+
+
+  get localStorage(): Storage {
+    return localStorage;
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ELDResponse } from '../../../model/user';
+import { ELDResponse, UserProfile } from '../../../model/user';
 import { DataService } from '../../service/data.service';
 
 @Component({
@@ -37,10 +37,18 @@ export class LoginComponent implements OnInit {
 
     this.dataService.login(this.form.value).subscribe(
       eldResponse => {
-        if (!eldResponse)
+        if (!eldResponse) {
           this.msg = "No User Found";
-        else {
-          this.dataService.saveLogin(eldResponse.userId);
+          this.dataService.removeLogin();
+        } else {
+          const user: UserProfile = 
+          {  
+            name: eldResponse.userId,
+            password: eldResponse.password,
+            dept: eldResponse.dept
+          };
+
+          this.dataService.saveLogin(user);
           setTimeout(()=>this.dataService.seteldResponse(eldResponse), 100);
           
         }

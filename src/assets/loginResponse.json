@@ -1,109 +1,60 @@
 {
-    "userid": "siddhesh",
-    "password": "Testing@12345",
-    "categoryWiseVideo": [
-        {
-            "category": "Mutual Fund",
-            "videoList": [
-                {
-                    "id": 1,
-                    "name": "Sample Video",
-                    "description": "This is a sample video",
-                    "fileName": "http://localhost:8080/video/sample-video-db.mp4",
-                    "author": "test",
-                    "category": "Mutual Fund",
-                    "uploadedBy": "test",
-                    "creationTime": "3922-03-22",
-                    "like": true,
-                    "totalNoOfLikes": 50,
-                    "rating": 4
-                },
-                {
-                    "id": 2,
-                    "name": "Sushant",
-                    "description": "This is a sample video to show",
-                    "fileName": "http://localhost:8080/video/sample-Sushant.mp4",
-                    "author": "test",
-                    "category": "trial",
-                    "uploadedBy": "test",
-                    "creationTime": "2022-03-22",
-                    "like": true,
-                    "totalNoOfLikes": 50,
-                    "rating": 4
-                },
-                {
-                    "id": 3,
-                    "name": "Sourabh",
-                    "description": "Sourabh Desc",
-                    "fileName": "http://localhost:8080/video/Sourabh_video.mp4",
-                    "author": "Mutual Fund",
-                    "uploadedBy": "test",
-                    "creationTime": "2022-03-22",
-                    "like": true,
-                    "totalNoOfLikes": 50,
-                    "rating": 4
-                },
-                {
-                    "id": 3,
-                    "name": "Sourabh",
-                    "description": "Sourabh Desc",
-                    "fileName": "http://localhost:8080/video/Sourabh_video.mp4",
-                    "author": "Mutual Fund",
-                    "uploadedBy": "test",
-                    "creationTime": "2022-03-22",
-                    "like": true,
-                    "totalNoOfLikes": 50,
-                    "rating": 4
-                },
-                {
-                    "id": 3,
-                    "name": "Sourabh",
-                    "description": "Sourabh Desc",
-                    "fileName": "http://localhost:8080/video/Sourabh_video.mp4",
-                    "author": "Mutual Fund",
-                    "uploadedBy": "test",
-                    "creationTime": "2022-03-22",
-                    "like": true,
-                    "totalNoOfLikes": 50,
-                    "rating": 4
-                },
-                {
-                    "id": 3,
-                    "name": "Sourabh",
-                    "description": "Sourabh Desc",
-                    "fileName": "http://localhost:8080/video/Sourabh_video.mp4",
-                    "author": "Mutual Fund",
-                    "uploadedBy": "test",
-                    "creationTime": "2022-03-22",
-                    "like": true,
-                    "totalNoOfLikes": 50,
-                    "rating": 4
-                },
-                {
-                    "id": 3,
-                    "name": "Sourabh",
-                    "description": "Sourabh Desc",
-                    "fileName": "http://localhost:8080/video/Sourabh_video.mp4",
-                    "author": "ETF",
-                    "uploadedBy": "test",
-                    "creationTime": "2022-03-22",
-                    "like": true,
-                    "totalNoOfLikes": 50,
-                    "rating": 4
-                },
-                {
-                    "id": 3,
-                    "name": "Sourabh",
-                    "description": "Sourabh Desc",
-                    "fileName": "http://localhost:8080/video/Sourabh_video.mp4",
-                    "author": "Mutual Fund",
-                    "uploadedBy": "test",
-                    "creationTime": "2022-03-22",
-                    "like": true,
-                    "totalNoOfLikes": 50,
-                    "rating": 4
-                }
-            ]
-        }
-    ]
+	"userId": "rinilt",
+	"password": "Test123",
+	"dept": "Mutual Funds",
+	"categoryWiseVideo": [
+		{
+			"category": "Traditional Investment Products",
+			"videoList": [
+				{
+					"id": 22,
+					"currentUser": "rinilt",
+					"name": "Green Bonds _ Morgan Stanley Minute tp",
+					"description": "Green Bonds_Morgan Stanley",
+					"fileName": "http://localhost:8082/video/Green Bonds _ Morgan Stanley Minute tp.mp4",
+					"author": "Morgan Stanley Emplyee",
+					"category": "Traditional Investment Products",
+					"uploadedBy": "admin",
+					"creationTime": "2022-02-27",
+					"totalNoOfLikes": 2,
+					"rating": 4,
+					"like": true,
+					"vtt": "https://eldlmsstorageacct.blob.core.windows.net/eldvtt/Financial_Advisor_ad.vtt",
+					"thumbneil": "https://eldlmsstorageacct.blob.core.windows.net/eldthumbneil/Green_Bonds_tp.PNG"
+				},
+				{
+					"id": 18,
+					"currentUser": "rinilt",
+					"name": "Creativity in Fixed Income Strats _ Morgan Stanley tp",
+					"description": "Creativity in Fixed Income Strats",
+					"fileName": "http://localhost:8082/video/Creativity in Fixed Income Strats _ Morgan Stanley tp.mp4",
+					"author": "Morgan Stanley Emplyee",
+					"category": "Traditional Investment Products",
+					"uploadedBy": "admin",
+					"creationTime": "2022-02-27",
+					"totalNoOfLikes": 0,
+					"rating": 1,
+					"like": false,
+					"vtt": null,
+					"thumbneil": "https://eldlmsstorageacct.blob.core.windows.net/eldthumbneil/Creativity_tp.PNG"
+				},
+				{
+					"id": 23,
+					"currentUser": "rinilt",
+					"name": "Mental Health in the Workplace _ Morgan Stanley tp",
+					"description": "Mental Health in the Workplace",
+					"fileName": "http://localhost:8082/video/Mental Health in the Workplace _ Morgan Stanley tp.mp4",
+					"author": "Morgan Stanley Emplyee",
+					"category": "Traditional Investment Products",
+					"uploadedBy": "admin",
+					"creationTime": "2022-02-27",
+					"totalNoOfLikes": 0,
+					"rating": 0,
+					"like": false,
+					"vtt": null,
+					"thumbneil": "https://eldlmsstorageacct.blob.core.windows.net/eldthumbneil/Mental_Health_tp.PNG"
+				}
+			]
+		}
+	]
 }

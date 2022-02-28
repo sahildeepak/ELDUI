@@ -8,7 +8,7 @@
             </div>
             <div class="col textRight" *ngIf="user">
                 <img class="profilePicture" src="/assets/user.png" alt="User">
-                <button type="button" class="btn btn-default" placement="start" ngbTooltip="{{user}}">
+                <button type="button" class="btn btn-default" placement="start" ngbTooltip="Department: {{_localStorage.getItem('dept')}}">
                     {{user}}
                   </button>
                 <button class="btn btn-default" (click)="logout()">Logout</button>

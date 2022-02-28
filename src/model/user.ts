@@ -2,9 +2,15 @@ export interface User {
   name: string;
   password: string;
 }
+export interface UserProfile {
+  name: string;
+  password: string;
+  dept: string;
+}
 export interface ELDResponse {
   userId: string;
   password: string;
+  dept: string;
   categoryWiseVideo: (CategoryWiseVideoEntity)[];
 }
 export interface CategoryWiseVideoEntity {
